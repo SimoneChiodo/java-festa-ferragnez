@@ -13,6 +13,10 @@ public class CheckGuest {
     // Prelevo il nome dell'utente
     System.out.println("Inserisci il tuo nome: ");
     String userName = input.nextLine();
+    while(userName.length() <= 3){
+      System.out.println("Il nome inserito deve essere piu' lungo di 3 caratteri. \nRiprova: ");
+      userName = input.nextLine();
+    }
 
     // Creo una variabile per sapere se l'utente e' in lista
     boolean userCanEnter = false;
