@@ -17,13 +17,16 @@ public class CheckGuest {
       System.out.println("Il nome inserito deve essere piu' lungo di 3 caratteri. \nRiprova: ");
       userName = input.nextLine();
     }
+    input.close();
 
     // Creo una variabile per sapere se l'utente e' in lista
     boolean userCanEnter = false;
     // Controllo se l'utente e' presente in lista
     for(int i = 0; i < guests.length; i++){
-      if(guests[i].toLowerCase().contains(userName.toLowerCase()))
+      if(guests[i].toLowerCase().contains(userName.toLowerCase())){
         userCanEnter = true;
+        break;
+      }
     }
 
     if(userCanEnter)
